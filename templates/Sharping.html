@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        .Top {
+            background: rgb(0, 0, 0); /* Black background */
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding */
+            color: rgb(255, 255, 255); /* White text color */
+        }
+        body {
+            background-color: rgb(255, 255, 255); /* White background */
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif; /* Set font */
+            color: rgb(0, 0, 0); /* Black text color */
+        }
+        button {
+            background-color: rgb(0, 0, 0); /* Black background */
+            color: rgb(255, 255, 255); /* White text color */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Add padding */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        button:hover {
+            background-color: rgb(50, 50, 50); /* Darker black on hover */
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px; /* Add some space at the top */
+        }
+        footer {
+            background-color: rgb(0, 0, 0); /* Black background */
+            border-radius: 15px;
+            width: 50%; /* Set a width */
+            margin: 20px auto 0; /* Center horizontally */
+            padding: 20px; /* Add padding */
+            text-align: center; /* Center the text */
+            color: rgb(255, 255, 255); /* White text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="Top">
+        <h1>Contrast Shifter</h1>
+    </div>
+    <h1>Upload an Image</h1>
+    <form id="uploadForm" action="/sharp_image" method="POST" enctype="multipart/form-data">
+        <input type="file" id="imageInput" name="image" accept="image/*">
+        <button type="submit" onclick="return Check_in()">Upload</button>
+    </form>
+    <footer>
+        <p>Contact: Sjboss@gmail.com</p>
+        <p>Copyright &copy; 2024</p>
+        <!-- <p>Follow us on <a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.linkedin.com/">LinkedIn</a></p> -->
+    </footer>
+    <script>
+        function Check_in() {
+            var fileInput = document.getElementById('imageInput');
+            if (fileInput.files.length > 0) {
+                // File is selected, you can proceed with upload or processing
+                return true; // Allow form submission
+            } else {
+                // No file selected, show an error message or take appropriate action
+                alert('Please select a file.');
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
